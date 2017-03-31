@@ -14,9 +14,9 @@ module.exports =
     {name: "Carnage!", color: "#3498db"},
     {name: "Brutal!", color: "#f1c40f"},
     {name: "Atomic!", color: "#f39c12"},
-    {name: "Smokin'!", color: "#f39c12"},
-    {name: "Smokin' Style!!", color: "#f39c12"},
-    {name: "Smokin' Sick Style!!!", color: "#f39c12"}
+    {name: "Smokin'!", color: "#e74c3c"},
+    {name: "Smokin' Style!!", color: "#e74c3c"},
+    {name: "Smokin' Sick Style!!!", color: "#e74c3c"}
   ]
 
   reset: ->
@@ -92,9 +92,9 @@ module.exports =
       @container.classList.add "reached"
 
     if @reached
-      @rank.textContent = @ranks[Math.round(@currentStreak/@getConfig("activationThreshold"))].name
-    else:
-      @rank.textContent = ""
+      currentRank = @ranks[Math.min(@ranks.length-1, Math.floor(@currentStreak/@getConfig("activationThreshold")) - 1)]
+      @rank.textContent = currentRank.name
+      @rank.style.color = currentRank.color
 
     @refreshStreakBar()
 
@@ -106,6 +106,7 @@ module.exports =
     @maxStreakReached = false
     @container.classList.add "combo-zero"
     @container.classList.remove "reached"
+    @rank.textContent = ""
     @throttledStopMusic()
     @renderStreak()
 
