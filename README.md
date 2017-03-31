@@ -6,7 +6,7 @@ A package for Atom to show off your Smokin' Sick Style.
 
 Now with a COMBO MODE!!!
 
-![activate-stylish-mode-combo](http://i.imgur.com/bxsMFO0.gif)
+![activate-stylish-mode-combo](http://i.imgur.com/MZV8X4Q.gif)
 
 ## Install
 
