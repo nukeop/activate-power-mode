@@ -1,8 +1,11 @@
+throttle = require "lodash.throttle"
 debounce = require "lodash.debounce"
 defer = require "lodash.defer"
 sample = require "lodash.sample"
+playAudio = require "./play-audio"
 
 module.exports =
+  playAudio: playAudio
   currentStreak: 0
   reached: false
   maxStreakReached: false
@@ -29,6 +32,7 @@ module.exports =
 
   setup: (editorElement) ->
     if not @container
+      @throttledStopMusic = throttle @playAudio.stopMusic.bind(@playAudio), 100, trailing: false
       @maxStreak = @getMaxStreak()
       @container = @createElement "streak-container"
       @container.classList.add "combo-zero"
@@ -41,14 +45,14 @@ module.exports =
       @exclamations = @createElement "exclamations", @container
 
       @streakTimeoutObserver?.dispose()
-      @streakTimeoutObserver = atom.config.observe 'activate-power-mode.comboMode.streakTimeout', (value) =>
+      @streakTimeoutObserver = atom.config.observe 'activate-stylish-mode.comboMode.streakTimeout', (value) =>
         @streakTimeout = value * 1000
         @endStreak()
         @debouncedEndStreak?.cancel()
         @debouncedEndStreak = debounce @endStreak.bind(this), @streakTimeout
 
       @opacityObserver?.dispose()
-      @opacityObserver = atom.config.observe 'activate-power-mode.comboMode.opacity', (value) =>
+      @opacityObserver = atom.config.observe 'activate-stylish-mode.comboMode.opacity', (value) =>
         @container?.style.opacity = value
 
     @exclamations.innerHTML = ''
@@ -87,6 +91,7 @@ module.exports =
     @maxStreakReached = false
     @container.classList.add "combo-zero"
     @container.classList.remove "reached"
+    @throttledStopMusic()
     @renderStreak()
 
   renderStreak: ->
@@ -122,23 +127,23 @@ module.exports =
     @reached
 
   getMaxStreak: ->
-    maxStreak = localStorage.getItem "activate-power-mode.maxStreak"
+    maxStreak = localStorage.getItem "activate-stylish-mode.maxStreak"
     maxStreak = 0 if maxStreak is null
     maxStreak
 
   increaseMaxStreak: ->
-    localStorage.setItem "activate-power-mode.maxStreak", @currentStreak
+    localStorage.setItem "activate-stylish-mode.maxStreak", @currentStreak
     @maxStreak = @currentStreak
     @max.textContent = "Max #{@maxStreak}"
     @showExclamation "NEW MAX!!!" if @maxStreakReached is false
     @maxStreakReached = true
 
   resetMaxStreak: ->
-    localStorage.setItem "activate-power-mode.maxStreak", 0
+    localStorage.setItem "activate-stylish-mode.maxStreak", 0
     @maxStreakReached = false
     @maxStreak = 0
     if @max
       @max.textContent = "Max 0"
 
   getConfig: (config) ->
-    atom.config.get "activate-power-mode.comboMode.#{config}"
+    atom.config.get "activate-stylish-mode.comboMode.#{config}"

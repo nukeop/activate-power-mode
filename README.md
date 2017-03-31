@@ -2,21 +2,19 @@
 
 A package for Atom to show off your Smokin' Sick Style.
 
-![activate-power-mode-0 4 0](https://cloud.githubusercontent.com/assets/688415/11615565/10f16456-9c65-11e5-8af4-265f01fc83a0.gif)
+![activate-stylish-mode-0 4 0](https://cloud.githubusercontent.com/assets/688415/11615565/10f16456-9c65-11e5-8af4-265f01fc83a0.gif)
 
 Now with a COMBO MODE!!!
 
-![activate-power-mode-combo](https://cloud.githubusercontent.com/assets/10590799/18817237/876c2d84-8321-11e6-8324-f1540604c0bd.gif)
-
-**For a list of power mode packages to other editors, check out [codeinthedark/awesome-power-mode](https://github.com/codeinthedark/awesome-power-mode).**
+![activate-stylish-mode-combo](https://cloud.githubusercontent.com/assets/10590799/18817237/876c2d84-8321-11e6-8324-f1540604c0bd.gif)
 
 ## Install
 
 With the atom package manager:
 ```bash
-apm install activate-power-mode
+apm install activate-stylish-mode
 ```
-Or Settings ➔ Packages ➔ Search for `activate-power-mode`
+Or Settings ➔ Packages ➔ Search for `activate-stylish-mode`
 
 ## Usage
 

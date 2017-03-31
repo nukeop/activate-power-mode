@@ -2,19 +2,19 @@
 'context-menu':
   'atom-text-editor': [
     {
-      'label': 'Toggle Power Mode'
-      'command': 'activate-power-mode:toggle'
+      'label': 'Toggle Stylish Mode'
+      'command': 'activate-stylish-mode:toggle'
     }
   ]
 'menu': [
   {
     'label': 'Packages'
     'submenu': [
-      'label': 'Activate Power Mode'
+      'label': 'Activate Stylish Mode'
       'submenu': [
         {
           'label': 'Toggle'
-          'command': 'activate-power-mode:toggle'
+          'command': 'activate-stylish-mode:toggle'
         }
       ]
     ]

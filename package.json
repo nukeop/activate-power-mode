@@ -1,11 +1,11 @@
 {
-  "name": "activate-power-mode",
-  "main": "./lib/activate-power-mode",
+  "name": "activate-stylish-mode",
+  "main": "./lib/activate-stylish-mode",
   "version": "1.4.0",
-  "description": "Activate POWER MODE to write your code in style.",
+  "description": "Activate SMOKIN' SICK STYLE MODE to write your code in style.",
   "keywords": [],
-  "repository": "https://github.com/JoelBesada/activate-power-mode",
-  "author": "Joel Besada <joel@joelb.me> (http://joelb.me)",
+  "repository": "https://github.com/nukeop/activate-stylish-mode",
+  "author": "nukeop <alsw@protonmail.com>",
   "license": "MIT",
   "engines": {
     "atom": ">=1.13.0 <2.0.0"

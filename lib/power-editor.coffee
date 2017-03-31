@@ -13,11 +13,12 @@ module.exports =
   enable: ->
     @throttledShake = throttle @screenShake.shake.bind(@screenShake), 100, trailing: false
     @throttledPlayAudio = throttle @playAudio.play.bind(@playAudio), 100, trailing: false
+    @throttledPlayMusic = throttle @playAudio.playMusic.bind(@playAudio), 100, trailing: false
 
     @activeItemSubscription = atom.workspace.onDidStopChangingActivePaneItem =>
       @subscribeToActiveTextEditor()
 
-    @comboModeEnabledSubscription = atom.config.observe 'activate-power-mode.comboMode.enabled', (value) =>
+    @comboModeEnabledSubscription = atom.config.observe 'activate-stylish-mode.comboMode.enabled', (value) =>
       @isComboMode = value
       if @isComboMode and @editorElement
         @comboMode.setup @editorElement
@@ -81,8 +82,10 @@ module.exports =
     if @getConfig "playAudio.enabled"
       @throttledPlayAudio()
 
+    @throttledPlayMusic()
+
   getCombo: ->
     @comboMode
 
   getConfig: (config) ->
-    atom.config.get "activate-power-mode.#{config}"
+    atom.config.get "activate-stylish-mode.#{config}"

@@ -36,7 +36,7 @@ module.exports =
     if not @canvas
       @canvas = document.createElement "canvas"
       @context = @canvas.getContext "2d"
-      @canvas.classList.add "power-mode-canvas"
+      @canvas.classList.add "stylish-mode-canvas"
       @initConfigSubscribers()
 
     editorElement.appendChild @canvas
@@ -51,15 +51,15 @@ module.exports =
 
   initConfigSubscribers: ->
     @subscriptions = new CompositeDisposable
-    @subscriptions.add atom.config.observe 'activate-power-mode.particles.spawnCount.min', (value) =>
+    @subscriptions.add atom.config.observe 'activate-stylish-mode.particles.spawnCount.min', (value) =>
       @confMinCount = value
-    @subscriptions.add atom.config.observe 'activate-power-mode.particles.spawnCount.max', (value) =>
+    @subscriptions.add atom.config.observe 'activate-stylish-mode.particles.spawnCount.max', (value) =>
       @confMaxCount = value
-    @subscriptions.add atom.config.observe 'activate-power-mode.particles.totalCount.max', (value) =>
+    @subscriptions.add atom.config.observe 'activate-stylish-mode.particles.totalCount.max', (value) =>
       @confTotalCount = value
-    @subscriptions.add atom.config.observe 'activate-power-mode.particles.size.min', (value) =>
+    @subscriptions.add atom.config.observe 'activate-stylish-mode.particles.size.min', (value) =>
       @confMinSize = value
-    @subscriptions.add atom.config.observe 'activate-power-mode.particles.size.max', (value) =>
+    @subscriptions.add atom.config.observe 'activate-stylish-mode.particles.size.max', (value) =>
       @confMaxSize = value
 
   spawnParticles: (screenPosition) ->
@@ -119,4 +119,4 @@ module.exports =
     @context.globalCompositeOperation = gco
 
   getConfig: (config) ->
-    atom.config.get "activate-power-mode.particles.#{config}"
+    atom.config.get "activate-stylish-mode.particles.#{config}"

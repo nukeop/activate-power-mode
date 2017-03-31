@@ -58,4 +58,4 @@ module.exports =
       @getColorAtPosition editor, editorElement, screenPosition
 
   getConfig: (config) ->
-    atom.config.get "activate-power-mode.particles.colours.#{config}"
+    atom.config.get "activate-stylish-mode.particles.colours.#{config}"

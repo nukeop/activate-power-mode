@@ -107,6 +107,22 @@ module.exports =
         default: 'rocksmash.wav'
         order: 4
 
+      playMusic:
+        title: "Play battle music"
+        description: "Battle music plays when you reach a high combo."
+        type: "boolean"
+        default: true
+        order: 5
+
+      musicVolume:
+        title: "Play battle music - Volume"
+        descirption: "Volume of the background battle music."
+        type: "number"
+        default: 0.4
+        minimum: 0.0
+        maximum: 1.0
+        order: 6
+
       volume:
         title: "Play Audio - Volume"
         description: "Volume of the audio clip played at keystroke."
@@ -193,7 +209,7 @@ module.exports =
     type: "object"
     properties:
       excluded:
-        title: "Prohibit activate-power-mode from enabling on these file types:"
+        title: "Prohibit activate-stylish-mode from enabling on these file types:"
         description: "Use comma separated, lowercase values (i.e. \"html, cpp, css\")"
         type: "array"
         default: ["."]

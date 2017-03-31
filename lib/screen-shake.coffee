@@ -21,4 +21,4 @@ module.exports =
     random(min, max, true) * direction
 
   getConfig: (config) ->
-    atom.config.get "activate-power-mode.screenShake.#{config}"
+    atom.config.get "activate-stylish-mode.screenShake.#{config}"
