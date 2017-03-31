@@ -1,6 +1,6 @@
-# Activate Power Mode
+# Activate Stylish Mode ![badge](https://s18.postimg.org/hynbccdax/tumblr_inline_mtujtxu1j_J1rw38tc.png)
 
-A package for Atom to replicate the effects from [codeinthedark/editor](https://github.com/codeinthedark/editor).
+A package for Atom to show off your Smokin' Sick Style.
 
 ![activate-power-mode-0 4 0](https://cloud.githubusercontent.com/assets/688415/11615565/10f16456-9c65-11e5-8af4-265f01fc83a0.gif)
 
