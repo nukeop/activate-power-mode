@@ -18,16 +18,16 @@ Or Settings ➔ Packages ➔ Search for `activate-stylish-mode`
 
 ## Usage
 
-- Activate with <kbd>Ctrl</kbd>-<kbd>Alt</kbd>-<kbd>O</kbd> or through the command panel with `Activate Power Mode: Toggle`. Use the command again to deactivate.
+- Activate with <kbd>Ctrl</kbd>-<kbd>Alt</kbd>-<kbd>O</kbd> or through the command panel with `Activate Stylish Mode: Toggle`. Use the command again to deactivate.
 
 **IMPORTANT: When `Combo Mode` is enabled, particles and other effects won't appear until you reach the activation threshold.**
 
-- Reset the max combo streak with the command `Activate Power Mode: Reset Max Combo`
+- Reset the max combo streak with the command `Activate Stylish Mode: Reset Max Combo`
 
 ## Settings
 
 ### Auto Toggle
-Auto enable power mode on atom start.
+Auto enable stylish mode on atom start.
 
 ### Combo Mode
 * **Enable/Disable**
@@ -46,7 +46,8 @@ Auto enable power mode on atom start.
 ### Play Audio
 * **Enable/Disable**
 * Volume
-* Audioclip (Gun, Typewriter, Custom)
+* Play battle music
+* Battle music volume
 
 ### Particles
 * **Enable/Disable**
