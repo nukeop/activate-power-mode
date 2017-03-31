@@ -107,6 +107,7 @@ module.exports =
     @container.classList.add "combo-zero"
     @container.classList.remove "reached"
     @rank.textContent = ""
+    @rank.style.color = @ranks[0].color
     @throttledStopMusic()
     @renderStreak()
 
