@@ -19,9 +19,12 @@ module.exports =
     if @musicPlaying
       return
 
+    musicdir = path.join(__dirname, "..", "audioclips", "battle")
+    tracks = fs.readdirSync(musicdir)
+    randomTrack = tracks[Math.floor(Math.random() * tracks.length)]
+
     @musicPlaying = true
-    music = path.join(__dirname, "..", "audioclips", "battle.ogg")
-    @musicAudio = new Audio(music)
+    @musicAudio = new Audio(path.join(musicdir, randomTrack))
     @musicAudio.currentTime = 0
     @musicAudio.volume = @getConfig "musicVolume"
     @musicAudio.load()
