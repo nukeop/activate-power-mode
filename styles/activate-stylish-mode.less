@@ -6,7 +6,7 @@
 
 @font-face {
   font-family: "Press Start 2P";
-  src: url("atom://activate-stylish-mode/fonts/PressStart2P-Regular.ttf")  format("truetype");
+  src: url("atom://activate-stylish-mode/fonts/Venetian.otf");
 }
 
 .stylish-mode-canvas {
@@ -18,6 +18,7 @@
 }
 
 .streak-container {
+  padding: 12px 12px 12px 12px;
   font-family: "Press Start 2P", sans-serif;
   position: absolute;
   z-index: 10;
@@ -26,30 +27,39 @@
   text-align: right;
 
   .title {
+    padding: 12px 12px 12px 12px;
     color: white;
-    text-shadow: 2px 2px 2px #4EFFA1;
-    font-size: 16px;
+    text-shadow: 0px 0px 9px #C72C1C;
+    font-size: 48px;
   }
 
   .max {
-    color: #4EFFA1;
-    font-size: 13px;
+    color: white;
+    text-shadow: 0px 0px 9px #C72C1C;
+    font-size: 30px;
   }
 
   .bar {
     position: relative;
-    opacity: 0.5;
     margin-top: 10px;
-    height: 8px;
-    background: #4EFFA1;
+    height: 12px;
+    background: #2ecc71;
     width: 100%;
     transform: scaleX(0);
+  }
+
+  .rank {
+    font-size: 96px;
+    color: white;
+    text-shadow: 0px 0px 9px #C72C1C;
+    line-height: 1;
   }
 
   .counter {
     margin-top: 30px;
     font-size: 80px;
-    color: #4EFFA1;
+    color: white;
+    text-shadow: 0px 0px 9px #C72C1C;
     line-height: 1;
 
     &.bump {
@@ -62,9 +72,8 @@
     bottom: -20px;
     right: 0;
     display: block;
-    color: #4EFFA1;
-    opacity: 0.75;
-    font-size: 20px;
+    color: #C72C1C;
+    font-size: 32px;
     text-align: right;
 
     .exclamation {
@@ -78,18 +87,13 @@
   }
 
   &.reached {
-    .title {
-      text-shadow: 2px 2px 2px #00DDFF;
-    }
-
     .counter,
-    .exclamations,
     .max {
-      color: #00DDFF;
+      color: white;
     }
 
     .bar {
-      background: #00DDFF;
+      background: #2ecc71;
     }
   }
 }

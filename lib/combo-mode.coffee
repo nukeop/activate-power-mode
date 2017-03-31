@@ -9,6 +9,15 @@ module.exports =
   currentStreak: 0
   reached: false
   maxStreakReached: false
+  ranks: [
+    {name: "Deadly!", color: "#ffffff"},
+    {name: "Carnage!", color: "#3498db"},
+    {name: "Brutal!", color: "#f1c40f"},
+    {name: "Atomic!", color: "#f39c12"},
+    {name: "Smokin'!", color: "#f39c12"},
+    {name: "Smokin' Style!!", color: "#f39c12"},
+    {name: "Smokin' Sick Style!!!", color: "#f39c12"}
+  ]
 
   reset: ->
     @container?.parentNode?.removeChild @container
@@ -23,6 +32,7 @@ module.exports =
     @currentStreak = 0
     @reached = false
     @maxStreakReached = false
+
 
   createElement: (name, parent)->
     @element = document.createElement "div"
@@ -40,10 +50,10 @@ module.exports =
       @title.textContent = "Combo"
       @max = @createElement "max", @container
       @max.textContent = "Max #{@maxStreak}"
+      @rank = @createElement "rank", @container
       @counter = @createElement "counter", @container
       @bar = @createElement "bar", @container
       @exclamations = @createElement "exclamations", @container
-
       @streakTimeoutObserver?.dispose()
       @streakTimeoutObserver = atom.config.observe 'activate-stylish-mode.comboMode.streakTimeout', (value) =>
         @streakTimeout = value * 1000
@@ -80,6 +90,11 @@ module.exports =
     if @currentStreak >= @getConfig("activationThreshold") and not @reached
       @reached = true
       @container.classList.add "reached"
+
+    if @reached
+      @rank.textContent = @ranks[Math.round(@currentStreak/@getConfig("activationThreshold"))].name
+    else:
+      @rank.textContent = ""
 
     @refreshStreakBar()
 
