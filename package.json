@@ -1,7 +1,7 @@
 {
   "name": "activate-stylish-mode",
   "main": "./lib/activate-stylish-mode",
-  "version": "1.4.0",
+  "version": "2.0.0",
   "description": "Activate SMOKIN' SICK STYLE MODE to write your code in style.",
   "keywords": [],
   "repository": "https://github.com/nukeop/activate-stylish-mode",
