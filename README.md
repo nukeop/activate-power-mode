@@ -1,4 +1,4 @@
-# Activate Stylish Mode ![badge](https://s18.postimg.org/hynbccdax/tumblr_inline_mtujtxu1j_J1rw38tc.png)
+# Activate Stylish Mode ![badge](https://i.imgur.com/yMNRnz2.png?1)
 
 A package for Atom to show off your Smokin' Sick Style.
 
